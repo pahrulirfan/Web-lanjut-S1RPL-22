@@ -1,5 +1,8 @@
 @extends('layout.app')
 @section('content')
+
+    <a href="{{ route('kelas.create') }}" class="btn btn-info float-right mt-2">Tambah Data</a>
+
     <table class="table table-bordered mt-5">
         <thead>
         <tr>

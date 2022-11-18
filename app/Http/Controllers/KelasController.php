@@ -13,4 +13,22 @@ class KelasController extends Controller
 //        dd($data);
         return view('kelas/index', compact('data'));
     }
+
+    public function create()
+    {
+        return view('kelas/form');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'fakultas' => 'required|min:5',
+            'prodi' => 'required',
+            'kelas' => 'required',
+            'isi' => 'required|integer'
+        ]);
+        Kelas::create($request->all());
+        return redirect()->route('kelas.index');
+    }
+
 }

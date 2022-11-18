@@ -16,4 +16,8 @@ Route::get('/mahasiswa/{id}/edit', [App\Http\Controllers\MahasiswaController::cl
 Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.delete');
 
 // route untuk kelas
-Route::get('/kelas', [KelasController::class, 'index']);
+Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
+// route form tambah data
+Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.create');
+// route form simpan data
+Route::post('/kelas/store', [KelasController::class, 'store'])->name('kelas.store');
